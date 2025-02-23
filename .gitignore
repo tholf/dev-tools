@@ -1,0 +1,67 @@
+# ignore IDE and container stuff
+.project/
+.idea/
+.ddev/*
+!.ddev/db_snapshots/
+!.ddev/config.yaml
+
+env/*
+!env/.env.example
+
+# VisualStudioCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# uncommittable
+**/npm-debug.log
+**/.DS_Store
+.env.example
+auth.json
+
+# ignore built folders
+vendor/
+node_modules/
+public/*
+!public/dev-content/
+!public/wp-content/
+public/wp-content/*
+!public/wp-content/uploads/
+public/wp-core/
+
+# disallowed
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi

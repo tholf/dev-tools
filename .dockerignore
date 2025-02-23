@@ -1,0 +1,11 @@
+**/.dockerignore
+**/.idea
+**/.git
+**/.gitignore
+**/.gitattributes
+**/.editorconfig
+**/.eslintignore
+**/.project
+**/npm-debug.log
+README.md
+BUILD.md
