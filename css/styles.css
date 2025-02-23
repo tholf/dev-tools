@@ -1,0 +1,82 @@
+body {
+    background-color: #2e2e2e;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+h2 {
+    color: aliceblue;
+    font-size: 20px;
+}
+.menu {
+    width: max-content;
+    padding: 6px 10px;
+    margin-bottom: 16px;
+    border-top: 1px solid #3d3e45;
+    border-bottom: 1px solid #3d3e45;
+    font-size: 16px;
+}
+.menu a {
+    margin: 0 8px;
+}
+div.container {
+    margin: 16px 10px;
+    color: #c6cdd5;
+}
+div.content {
+    margin: 20px;
+}
+
+a, a:link, a:visited {
+    color: #a6f4ff;
+    text-decoration: none;
+    background-color: #2e2e2e;
+}
+a:hover {
+    color: #dbfbff;
+}
+
+textarea {
+    font-size: 11px;
+}
+textarea.input {
+    min-height: 50px;
+}
+textarea.result {
+    min-height: 80px;
+}
+textarea,
+input,
+div.file-upload {
+    color: aliceblue;
+    background-color: #1e1f22;
+}
+div.file-upload {
+    padding: 10px 40px 10px 6px;
+    border: 1px solid #777777;
+}
+
+label {
+    display: flex;
+    flex-direction: column
+}
+
+input::file-selector-button {
+    margin-right: 20px;
+    color: aliceblue;
+    background-color: #3d3e45;
+    padding: 6px 14px;
+    border-radius: 3px;
+    border: 1px solid #777777;
+    cursor: pointer;
+}
+input::file-selector-button:hover {
+    background-color: #757783;
+    cursor: pointer;
+}
+
+button {
+    font-size: 13px;
+    color: #bfc4ca;
+    background-color: #3d3e45;
+    padding: 4px 22px;
+}
