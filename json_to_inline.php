@@ -1,46 +1,62 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="us">
+<?php
+/* *
+ *** Converts formatted or unformatted JSON into inline formatted JSON
+ ***
+*/
+
+function to_inline_json($string) {
+    return json_encode(json_decode($string), JSON_UNESCAPED_SLASHES);
+}
+function to_prettyprint_json($string) {
+    return json_encode(json_decode($string), JSON_PRETTY_PRINT);
+}
+
+$sample = '{"something":"else"}';
+$inout_placeholder = print_r(to_prettyprint_json($sample), true);
+$output_placeholder = print_r(to_inline_json($sample), true);
+
+if (isset($_POST['content'])) {
+    $result = !empty($_POST['content']) ? print_r(to_inline_json($_POST['content']), true) : $output_placeholder;
+} else {
+    $result = '';
+}
+
+?><html xmlns="http://www.w3.org/1999/xhtml" lang="us">
 <head>
-    <title>Pretty JSON to Inline</title>
+    <title>JSON to Inline</title>
     <?php include "includes/head.php"; ?>
 </head>
 <body>
     <div class="container">
-        <h2><a href="index.php">Tools</a> :: Pretty JSON to Inline</h2>
+        <h2><a href="index.php">Tools</a> :: JSON to Inline</h2>
         <?php include "includes/dev_menu.php"; ?>
 
         <div class="content">
-            <?php
-            $placeholder = print_r(json_encode(json_decode('{"something":"else"}'), JSON_PRETTY_PRINT),true);
-            ?>
             <form action='' method='post'>
                 <label>
-                    Pretty JSON
-                    <textarea name="enc" class="input" placeholder='<?php echo $placeholder ?>'></textarea>
+                    JSON
+                    <textarea name="content" class="input" placeholder='<?php echo $inout_placeholder; ?>'></textarea>
                 </label>
                 <button type="submit" name="submit" id="submit">go</button>
             </form>
-            <?php
-            $sample = $placeholder;
-            $placeholder = print_r(json_encode(json_decode($sample), JSON_UNESCAPED_SLASHES),true);
-            if (isset($_POST['enc'])) {
-                $result = !empty($_POST['enc']) ? print_r(json_encode(json_decode($_POST['enc'])),true) : $placeholder;
-            } else {
-                $result = '';
-            }
-            ?>
             <label>
-                Result
+                Inline JSON
                 <textarea
                         id="result"
                         class="result"
-                        placeholder='<?php echo $placeholder ?>'
+                        placeholder='<?php echo $output_placeholder ?>'
                 ><?php echo $result; ?></textarea>
-                <script>
-                    let resultTextarea = document.getElementById('result');
-                    resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
-                </script>
             </label>
+            <?php if (isset($_POST['content'])) { ?>
+                <form action='' method="post">
+                    <button type="submit" id="cancel">Cancel</button>
+                </form>
+            <?php } ?>
         </div>
     </div>
+    <script>
+        let resultTextarea = document.getElementById('result');
+        resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
+    </script>
 </body>
 </html>

@@ -15,14 +15,14 @@
             <form action='' method='post'>
                 <label>
                     Text
-                    <textarea name="enc" class="input" placeholder='<?php echo $sample; ?>'></textarea>
+                    <textarea name="content" class="input" placeholder='<?php echo $sample; ?>'></textarea>
                 </label>
                 <button type="submit" name="submit" id="submit">go</button>
             </form>
             <?php
             $placeholder = print_r(urlencode($sample),true);
-            if (isset($_POST['enc'])) {
-                $result = !empty($_POST['enc']) ? print_r(urlencode($_POST['enc']), true) : $placeholder;
+            if (isset($_POST['content'])) {
+                $result = !empty($_POST['content']) ? print_r(urlencode($_POST['content']), true) : $placeholder;
             } else {
                 $result = '';
             }
@@ -39,6 +39,11 @@
                     resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
                 </script>
             </label>
+            <?php if (isset($_POST['content'])) { ?>
+                <form action='' method="post">
+                    <button type="submit" id="cancel">Cancel</button>
+                </form>
+            <?php } ?>
         </div>
     </div>
 </body>
