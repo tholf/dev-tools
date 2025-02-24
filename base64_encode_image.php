@@ -15,7 +15,7 @@ if (version_compare(phpversion(), '5.1.0', '>=') && empty(date_default_timezone_
 
 function validate_upload(array $file): array {
     $allowedExtensions = array("gif", "jpeg", "jpg", "png", "svg");
-    $allowedMimeTypes = array("image/gif", "image/jpeg", "image/jpg", "image/pjpeg", "image/x-png", "image/png", "image/svg");
+    $allowedMimeTypes = array("image/gif", "image/jpeg", "image/jpg", "image/pjpeg", "image/x-png", "image/png", "image/svg+xml");
     $temp = explode(".", $file["name"]);
     $extension = end($temp);
 
@@ -78,6 +78,7 @@ function convert_file(array $file): array {
         'status' => true,
         'message' => implode('<br>', $log),
         'base64_encoded' => $base64_encode_file,
+        'mime_type' => $file["type"],
     ];
 }
 
@@ -97,12 +98,12 @@ if (!empty($_FILES['file'])) {
         <?php include "includes/dev_menu.php"; ?>
 
         <div class="content">
-            <form action='<?php echo !isset($_GET['debug']) ? '?debug' : ''; ?>' method='post' enctype='multipart/form-data'>
+            <form action='<?php echo isset($_GET['debug']) ? '?debug' : ''; ?>' method='post' enctype='multipart/form-data'>
                 <label for="file">
                     Select Image
                 </label>
                 <div class="file-upload">
-                    <input type="file" name="file" id="file" accept="image/png, image/jpeg, image/svg" />
+                    <input type="file" name="file" id="file" accept="image/png, image/jpeg, image/svg+xml" />
                 </div>
                 <button type="submit" name="submit" id="submit">go</button>
             </form>
@@ -117,7 +118,7 @@ if (!empty($_FILES['file'])) {
                 <p>
                     <label>
                         CSS
-                        <textarea class="result" cols="150" rows="15">background: #FFF url(data:image/gif;base64,<?php echo $converted_file['base64_encoded']; ?>) no-repeat top left;</textarea>
+                        <textarea class="result" cols="150" rows="15">background: #FFF url(data:<?php echo $converted_file['mime_type']; ?>;base64,<?php echo $converted_file['base64_encoded']; ?>) no-repeat top left;</textarea>
                     </label>
                 </p>
                 <form action='' method="post">

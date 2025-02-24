@@ -35,13 +35,13 @@ if (isset($_POST['content'])) {
     <div class="content">
         <form action='' method='post'>
             <label>
-                JSON
+                Bas64 Encoded
                 <textarea name="content" class="input" placeholder='<?php echo $inout_placeholder; ?>'></textarea>
             </label>
             <button type="submit" name="submit" id="submit">go</button>
         </form>
         <label>
-            PrettyPrint JSON
+            Content
             <textarea
                 id="result"
                 class="result"
