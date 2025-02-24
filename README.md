@@ -2,10 +2,12 @@
 
 ### Information Scripts
 
-- [JSON Pretty Print](json_prettyprint.php)
-- [JSON to Inline JSON](json_to_inline.php)
+- [JSON PrettyPrint](json_prettyprint.php)
+- [JSON to Inline](json_to_inline.php)
 - [JSON to PHP Object](json_to_php_object.php)
-- [Encode Image in Base64](base64_encode_image.php)
+- [Base64 Decode](base64_decode.php)
+- [Base64 Encode](base64_encode.php)
+- [Base64 Encode Image](base64_encode_image.php)
 - [Outbound / Inbound IPs](outbound_inbound_ips.php)
 - [PHP Info](phpinfo.php)
 - [SSL / TLS Info](ssl_tls.php)

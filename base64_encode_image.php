@@ -89,12 +89,12 @@ if (!empty($_FILES['file'])) {
 
 ?><html xmlns="http://www.w3.org/1999/xhtml" lang="us">
 <head>
-    <title>JSON PrettyPrint</title>
+    <title>Base64 Encode Image</title>
     <?php include "includes/head.php"; ?>
 </head>
 <body>
     <div class="container">
-        <h2><a href="index.php">Tools</a> :: JSON PrettyPrint</h2>
+        <h2><a href="index.php">Tools</a> :: Base64 Encode Image</h2>
         <?php include "includes/dev_menu.php"; ?>
 
         <div class="content">
