@@ -18,6 +18,9 @@
                     <textarea name="content" class="input" placeholder='<?php echo $sample; ?>'></textarea>
                 </label>
                 <button type="submit" name="submit" id="submit">go</button>
+                <?php if (isset($_POST['content'])) { ?>
+                    <button type="button" name="reset" id="reset" onclick="window.history.back();">reset</button>
+                <?php } ?>
             </form>
             <?php
             $placeholder = print_r(urlencode($sample),true);
@@ -39,11 +42,6 @@
                     resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
                 </script>
             </label>
-            <?php if (isset($_POST['content'])) { ?>
-                <form action='' method="post">
-                    <button type="submit" id="cancel">Cancel</button>
-                </form>
-            <?php } ?>
         </div>
     </div>
 </body>

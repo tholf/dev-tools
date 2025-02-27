@@ -106,6 +106,9 @@ if (!empty($_FILES['file'])) {
                     <input type="file" name="file" id="file" accept="image/png, image/jpeg, image/svg+xml" />
                 </div>
                 <button type="submit" name="submit" id="submit">go</button>
+                <?php if (!empty($_FILES['file'])) { ?>
+                    <button type="button" name="reset" id="reset" onclick="window.history.back();">reset</button>
+                <?php } ?>
             </form>
             <?php if (!empty($converted_file) && $converted_file['status']) { ?>
                 <?php echo (isset($_GET['debug']) && !empty($converted_file['message'])) ? '<p style="color: white;">' . $converted_file['message'] . '</p>' : ''; ?>
@@ -121,9 +124,6 @@ if (!empty($_FILES['file'])) {
                         <textarea class="result" cols="150" rows="15">background: #FFF url(data:<?php echo $converted_file['mime_type']; ?>;base64,<?php echo $converted_file['base64_encoded']; ?>) no-repeat top left;</textarea>
                     </label>
                 </p>
-                <form action='' method="post">
-                    <button type="submit" id="cancel">Cancel</button>
-                </form>
                 <p>&nbsp;</p>
             <?php } else { ?>
                 <?php echo $converted_file['message']; ?>

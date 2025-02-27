@@ -35,6 +35,9 @@ if (isset($_POST['content'])) {
                     <textarea name="content" class="input" placeholder='<?php echo $inout_placeholder; ?>'></textarea>
                 </label>
                 <button type="submit" name="submit" id="submit">go</button>
+                <?php if (isset($_POST['content'])) { ?>
+                    <button type="button" name="reset" id="reset" onclick="window.history.back();">reset</button>
+                <?php } ?>
             </form>
             <label>
                 PrettyPrint JSON
@@ -44,11 +47,6 @@ if (isset($_POST['content'])) {
                         placeholder='<?php echo $output_placeholder ?>'
                 ><?php echo $result; ?></textarea>
             </label>
-            <?php if (isset($_POST['content'])) { ?>
-                <form action='' method="post">
-                    <button type="submit" id="cancel">Cancel</button>
-                </form>
-            <?php } ?>
         </div>
     </div>
     <script>

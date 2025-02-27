@@ -1,5 +1,5 @@
 body {
-    font-size: 14px;
+    font-size: 12px;
     font-family: sans-serif;
     background-color: #2e2e2e;
 }
@@ -11,10 +11,9 @@ h2 {
 div.menu {
     display: flex;
     flex-direction: row;
-    width: max-content;
     margin-bottom: 16px;
-    font-size: 16px;
     padding: 6px 10px;
+    width: max-content;
     border-top: 1px solid #3d3e45;
     border-bottom: 1px solid #3d3e45;
 }
@@ -62,8 +61,8 @@ div.file-upload {
 }
 div.file-upload {
     padding: 10px 40px 10px 6px;
-    border: 1px solid #777777;
     width: fit-content;
+    border: 1px solid #777777;
 }
 
 label {
@@ -72,11 +71,15 @@ label {
 }
 
 button {
-    padding: 4px 32px;
-    font-size: 13px;
+    padding: 4px 22px;
     color: #bfc4ca;
     background-color: #3d3e45;
 }
+button[type="submit"] {
+    margin-right: 8px;
+    padding: 4px 42px;
+}
+
 input::file-selector-button {
     margin-right: 20px;
     padding: 6px 14px;
