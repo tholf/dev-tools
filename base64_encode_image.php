@@ -5,6 +5,7 @@
  *** to the URL and hit enter. Then submit your image again.
  ***
 */
+$title = 'Base64 Encode Image';
 
 const TMP_LOCATION = '../../tmp/';
 
@@ -89,12 +90,12 @@ if (!empty($_FILES['file'])) {
 
 ?><html xmlns="http://www.w3.org/1999/xhtml" lang="us">
 <head>
-    <title>Base64 Encode Image</title>
+    <title><?php echo $title; ?></title>
     <?php include "includes/head.php"; ?>
 </head>
 <body>
     <div class="container">
-        <h2><a href="index.php">Tools</a> :: Base64 Encode Image</h2>
+        <?php include "includes/heading.php"; ?>
         <?php include "includes/dev_menu.php"; ?>
 
         <div class="content">
