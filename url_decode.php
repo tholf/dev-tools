@@ -39,16 +39,17 @@ if (isset($_POST['content'])) {
             <label>
                 URL Decoded
                 <textarea
-                        id="result"
-                        class="result"
-                        placeholder='<?php echo $output_placeholder ?>'
-                    ><?php echo $result; ?></textarea>
-                <script>
-                    let resultTextarea = document.getElementById('result');
-                    resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
-                </script>
+                    id="result"
+                    class="result"
+                    placeholder='<?php echo $output_placeholder ?>'
+                ><?php echo $result; ?></textarea>
             </label>
+            <p>&nbsp;</p>
         </div>
     </div>
+    <script>
+        let resultTextarea = document.getElementById('result');
+        resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
+    </script>
 </body>
 </html>

@@ -25,35 +25,35 @@ if (isset($_POST['content'])) {
     <?php include "includes/head.php"; ?>
 </head>
 <body>
-<div class="container">
-    <?php include "includes/heading.php"; ?>
-    <?php include "includes/dev_menu.php"; ?>
+    <div class="container">
+        <?php include "includes/heading.php"; ?>
+        <?php include "includes/dev_menu.php"; ?>
 
-    <div class="content">
-        <form action='' method='post'>
+        <div class="content">
+            <form action='' method='post'>
+                <label>
+                    Content
+                    <textarea name="content" class="input" placeholder='<?php echo $input_placeholder; ?>'></textarea>
+                </label>
+                <button type="submit" name="submit" id="submit">go</button>
+                <?php if (isset($_POST['content'])) { ?>
+                    <button type="button" name="reset" id="reset" onclick="window.history.back();">reset</button>
+                <?php } ?>
+            </form>
             <label>
-                Content
-                <textarea name="content" class="input" placeholder='<?php echo $input_placeholder; ?>'></textarea>
+                Bas64 Encoded
+                <textarea
+                    id="result"
+                    class="result"
+                    placeholder='<?php echo $output_placeholder ?>'
+                ><?php echo $result; ?></textarea>
             </label>
-            <button type="submit" name="submit" id="submit">go</button>
-            <?php if (isset($_POST['content'])) { ?>
-                <button type="button" name="reset" id="reset" onclick="window.history.back();">reset</button>
-            <?php } ?>
-        </form>
-        <label>
-            Bas64 Encoded
-            <textarea
-                id="result"
-                class="result"
-                placeholder='<?php echo $output_placeholder ?>'
-            ><?php echo $result; ?></textarea>
-        </label>
-        <p>&nbsp;</p>
+            <p>&nbsp;</p>
+        </div>
     </div>
-</div>
-<script>
-    let resultTextarea = document.getElementById('result');
-    resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
-</script>
+    <script>
+        let resultTextarea = document.getElementById('result');
+        resultTextarea.style.height = (resultTextarea.scrollHeight + 10) + "px";
+    </script>
 </body>
 </html>

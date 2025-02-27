@@ -43,11 +43,12 @@ if (isset($_POST['content'])) {
             <label>
                 PHP Array Formatted
                 <textarea
-                        id="result"
-                        class="result"
-                        placeholder='<?php echo $output_placeholder ?>'
+                    id="result"
+                    class="result"
+                    placeholder='<?php echo $output_placeholder ?>'
                 ><?php echo $result; ?></textarea>
             </label>
+            <p>&nbsp;</p>
         </div>
     </div>
     <script>
