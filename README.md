@@ -8,11 +8,15 @@ These are a handful of handy scripts I use often while doing software developmen
 - [JSON PrettyPrint](json_prettyprint.php)
 - [JSON to Inline](json_to_inline.php)
 - [JSON to PHP Object](json_to_php_object.php)
+- [URL Decode](url_decode.php)
+- [URL Encode](url_encode.php)
+- [Escape](escape.php)
+- [Unescape](unescape.php)
+- [Encode Line Breaks](encode_line_breaks.php)
+- [Decode Line Breaks](decode_line_breaks.php)
 - [Base64 Decode](base64_decode.php)
 - [Base64 Encode](base64_encode.php)
 - [Base64 Encode Image](base64_encode_image.php)
-- [URL Decode](url_decode.php)
-- [URL Encode](url_encode.php)
 
 ### Host Information Scripts
 
