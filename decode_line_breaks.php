@@ -5,12 +5,13 @@
 */
 $title = 'Decode Line Breaks';
 
-$sample = 'Make a single\nline of this text.';
+$sample = 'Make a\nsingle line of\r\nthis text.';
 $input_placeholder = $sample;
-$output_placeholder = print_r(str_replace(['\\\\n','\n'], "\n", $sample),true);
+$regex = ['\\\\r\\\\n','\r\n','\\\\n','\n'];
+$output_placeholder = print_r(str_replace($regex, "\n", $sample),true);
 
 if (isset($_POST['content'])) {
-    $result = !empty($_POST['content']) ? print_r(str_replace(['\\\\n','\n'], "\n", $_POST['content']), true) : $output_placeholder;
+    $result = !empty($_POST['content']) ? print_r(str_replace($regex, "\n", $_POST['content']), true) : $output_placeholder;
 } else {
     $result = '';
 }
